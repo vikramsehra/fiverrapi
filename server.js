@@ -11,6 +11,7 @@ import authRoute from "./routes/auth.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 const BASE_URL = process.env.BASE_URL;
+const PORT = process.env.PORT || 8800;
 
 const app = express();
 dotenv.config();
@@ -43,7 +44,7 @@ app.use((err, req, res, next) => {
     return res.status(errorStatus).send(errorMessage);
 })
 
-app.listen(8800, () => {
+app.listen(PORT, () => {
     connect();
     console.log("Backend server is running");
 })
