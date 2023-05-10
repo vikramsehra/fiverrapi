@@ -10,7 +10,7 @@ import reviewRoute from "./routes/Review.js";
 import authRoute from "./routes/auth.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
-const BASE_URL = process.env.BASE_URL;
+// const BASE_URL = process.env.BASE_URL;
 const PORT = process.env.PORT || 8800;
 
 const app = express();
@@ -25,7 +25,7 @@ const connect = async () => {
     }
 };
 
-app.use(cors({ origin: BASE_URL, credentials: true }));
+app.use(cors({ origin: process.env.BASE_URL, credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
 
